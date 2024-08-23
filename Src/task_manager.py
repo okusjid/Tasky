@@ -38,7 +38,7 @@ class TaskManager:
         if self.tasks:
             self.next_id = max(task.task_id for task in self.tasks) + 1
     
-    def _find_task(self, task_id: int) -> Task:
+    def _find_task(self, task_id: int) -> Task | None:
         for task in self.tasks:
             if task.task_id == task_id:
                 return task
