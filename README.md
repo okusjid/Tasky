@@ -6,6 +6,7 @@ A command-line interface (CLI) application for managing tasks using object-orien
 
 ```plaintext
 project-name/
+└   .venv
 │   README.md
 └───src/
 │   │   __init__.py
@@ -58,6 +59,30 @@ python src/main.py
 - **Delete a Task:** Delete a task by specifying its ID.
 - **Mark a Task as Completed:** Mark a task as completed by specifying its ID.
 - **List All Tasks:** List all tasks with completed tasks clearly indicated.
+
+## 1. Activate Your Virtual Environment
+
+Ensure your virtual environment is activated:
+
+**Windows:**
+```bash
+.venv\Scripts\activate
+```
+## 2. Running Individual Test Files
+
+You can run a specific test file using:
+
+```bash
+python -m unittest tests/test_task.py
+```
+
+## 3. Running All Tests
+
+To run all the tests in the tests/ directory, use:
+
+```bash
+python -m unittest discover -s tests
+```
 
 ## Understanding the Tests
 
