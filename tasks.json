@@ -1,1 +1,7 @@
-[]
+[
+    {
+        "id": 3,
+        "description": "Ear",
+        "completed": false
+    }
+]

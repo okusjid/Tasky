@@ -1,5 +1,5 @@
 from typing import List, Dict
-from .task import Task
+from task import Task
 
 
 class TaskManager:
