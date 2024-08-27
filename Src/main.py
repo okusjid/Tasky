@@ -1,6 +1,6 @@
 import sys
-from task_manager import TaskManager
-from utils import Utils
+from .task_manager import TaskManager
+from .utils import Utils
 
 FILE_PATH = 'tasks.json'
 
@@ -9,6 +9,15 @@ class TaskManagerCLI:
     def __init__(self) -> None:
         self.manager = TaskManager()
         self.load_tasks()
+    
+    # def __repr__(self):
+    #     print("""Task Manager CLI
+    #     1. Add Task
+    #     2. Delete Task
+    #     3. Mark Task as Completed
+    #     4. List Tasks
+    #     5. Exit
+    #     """)
     
     def load_tasks(self) -> None:
         task_data = Utils.load_tasks_from_file(FILE_PATH)
@@ -37,6 +46,9 @@ Task Manager
                 description = input("Enter task description: ").strip()
                 task = self.manager.add_task(description)
                 print(f"Task '{task.description}' added successfully!")
+                self.save_tasks()
+                print("Yayyy!! Tasks saved.")
+                
             elif choice == "2":
                 try:
                     task_id = int(input("Enter task ID to delete: ").strip())
