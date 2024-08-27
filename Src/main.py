@@ -54,6 +54,8 @@ Task Manager
                     task_id = int(input("Enter task ID to delete: ").strip())
                     if self.manager.delete_task(task_id):
                         print(f"Task {task_id} deleted successfully!")
+                        self.save_tasks()
+                        print("Yayyy!! Tasks deleted.")
                     else:
                         print(f"Task {task_id} not found.")
                 except ValueError:
